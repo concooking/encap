@@ -1,25 +1,32 @@
 package org.skypro.skyshop.product;
 
-public class Product {
+public abstract class Product {
     final String product;
-    final int price;
 
-    public Product(String product, int price) {
+    public Product(String product) {
         this.product = product;
-        this.price = price;
+    }
+
+    public Product(int i, int i1) {
+        product = null;
+    }
+
+    public Product() {
+
+        product = "";
     }
 
     public String getProduct() {
         return product;
     }
 
-    public int getPrice() {
-        return price;
+    public abstract int getBasePricePrice();
+
+    public abstract int getPrice();
+
+
+    public void printPrice() {
     }
 }
-
-
-
-
 
 
