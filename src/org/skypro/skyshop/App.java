@@ -4,19 +4,17 @@ import org.skypro.skyshop.basket.ProductBasket;
 import org.skypro.skyshop.product.Product;
 
 public class App {
-
     public static void main(String[] args) {
         Product[] products = new Product[5];
-        ProductBasket basket = new ProductBasket(products);
-        basket.addProductBasket(new Product("Мука", 150));
-        basket.addProductBasket(new Product("Яйцо", 110));
-        basket.addProductBasket(new Product("Хлеб", 60));
-        basket.addProductBasket(new Product("Колбаса", 550));
-        basket.addProductBasket(new Product("Сахар", 50));
-        System.out.println(basket.totalCostBasket());
-        basket.printContentBasket();
-        System.out.println(basket.searchProductByName("Мука"));
-        basket.clearBasket();
-        basket.printContentBasket();
+        ProductBasket Basket = new ProductBasket(products);
+        Basket.addProductBasket(new FixPriceProduct("Сыр", 100));
+        Basket.addProductBasket(new SimpleProduct("Масло", 150));
+        Basket.addProductBasket(new DiscountedProduct("Сахар", 10, 100));
+        Basket.addProductBasket(new DiscountedProduct("Хлеб", 23, 60));
+        Basket.totalCostBasket();
+        Basket.printContentBasket();
+        System.out.println(Basket.searchProductByName("Сыр"));
+        Basket.clearBasket();
+
     }
 }
