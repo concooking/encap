@@ -7,26 +7,12 @@ public abstract class Product {
         this.product = product;
     }
 
-    public Product(int i, int i1) {
-        product = null;
-    }
-
-    public Product() {
-
-        product = "";
-    }
-
-    public String getProduct() {
+    public String getNameProduct(){
         return product;
     }
 
-    public abstract int getBasePricePrice();
-
     public abstract int getPrice();
 
-
-    public void printPrice() {
-    }
+    public abstract boolean isSpecial();
 }
-
 
